@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<h1>Edit Remedy:</h1>
+<hr />
+<form action="/remedies/Details/@(Model.RemedyId)" method="post">
+  <label for="name">Remedy Name</label>
+  <input id="name" name="name" type="text" value="@(Model.Name)">
+  <label for="detail">Remedy Description</label>
+  <input id="details" name="details" type="text" value="@(Model.Details)">
+  <label for="ailment">Ailment It Helps With</label>
+  <input id="ailment" name="ailment" type="text" value="@(Model.Ailment)">
+  <label for="ingredients">Remedy Ingredients</label>
+  <input id="ingredients" name="ingredients" type="text" value="@(Model.Ingredients)">
+  <hr />
+  <button type="submit">Update</button>
+</form>
+
+<a href="/remedies/Details/@(Model.RemedyId)"><p>Return to Details</p></a>

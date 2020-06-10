@@ -29,6 +29,7 @@ namespace EarthlyRemediesClient.Controllers
       return View(remedy);
     }
 
+
     public IActionResult Edit(int id)
     {
       var remedy = Remedy.GetDetails(id);
@@ -42,7 +43,6 @@ namespace EarthlyRemediesClient.Controllers
       Remedy.Put(remedy);
       return RedirectToAction("Details", id);
     }
-
     public IActionResult Delete(int id)
     {
       Remedy.Delete(id);

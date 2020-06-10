@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Remedy Info:</h1>
+<ul>
+    <li>Name: @Model.Name</li>
+    <li>Description: @Model.Details</li>
+    <li>Ailment: @Model.Ailment</li>
+    <li>Ingredients: @Model.Ingredients</li>
+    @foreach (var join in Model.Categories)
+      {
+        <li>@join.Category.Name</li>
+        @* @using (Html.BeginForm("DeleteCategory", "remedies"))
+        {
+          <p>@Html.Actionlink("joinId", @join.CategoryRemedyId) <input type="submit" value="Remove Category" class="btn"/></p>
+        } *@
+      }
+</ul>
+<br>
+<hr />
+<a href="/remedies/edit/@(Model.RemedyId)"><p>Edit Remedy</p></a>
+<a href="/remedies/delete/@(Model.RemedyId)"><p>Delete Remedy</p></a>
+<br>
+
+<a href="/remedies"><p>Return</p></a>
+

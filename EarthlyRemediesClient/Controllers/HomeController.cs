@@ -12,7 +12,7 @@ namespace EarthlyRemediesClient.Controllers
   {
     public IActionResult Index()
     {
-      return View(); // RedirectToAction("Index"); maybe?
+      return View();
     }
 
     public IActionResult Privacy()
