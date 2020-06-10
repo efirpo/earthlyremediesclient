@@ -4,7 +4,6 @@ using System;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using EarthlyRemediesClient.Models;
 
 namespace EarthlyRemediesClient.Models
 {
@@ -21,15 +20,16 @@ namespace EarthlyRemediesClient.Models
     [StringLength(30)]
     public string Ailment { get; set; }
     [Required]
-    public string Category { get; set; }
     public string Ingredients { get; set; }
     public int UserId { get; set; }
     public List<Rating> Ratings { get; set; }
+    public List<CategoryRemedy> Categories { get; set; }
 
     public static List<Remedy> GetRemedies()
     {
       var apiCallTask = ApiHelper.GetAllRemedies();
       var result = apiCallTask.Result;
+      Console.WriteLine("\n\n\n\n" + result + "\n\n\n\n");
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       List<Remedy> remedyList = JsonConvert.DeserializeObject<List<Remedy>>(jsonResponse.ToString());

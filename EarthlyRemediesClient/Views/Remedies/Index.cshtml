@@ -13,7 +13,7 @@
         <li>Details: @remedy.Details</li>
         <li>Ailment: @remedy.Ailment</li>
         <ul>
-          @foreach (var join in Model.Categories)
+          @foreach (var join in remedy.Categories)
           {
             <li>@join.Category.Name</li>
           }
